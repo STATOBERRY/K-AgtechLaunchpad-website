@@ -1,0 +1,92 @@
+```{=html}
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+
+<!-- ===============================
+     HERO SECTION
+================================ -->
+<section class="hero-wrapper">
+
+  <div class="hero-grid">
+
+    <!-- LEFT CONTENT -->
+    <div>
+      <h1 class="hero-title">
+  <span class="hero-title-main">
+    K-Agtech Launchpad – KAU – NABARD – WSU
+  </span><br>
+  <span class="hero-title-sub">
+    Empowering<br>
+    Future-Ready<br>
+    Agri-Technologies
+  </span>
+</h1>
+
+
+      <p class="hero-subtitle">
+        Learn, innovate, incubate, and scale with a
+        NABARD-supported agri-innovation ecosystem
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="primary">Latest News</a>
+        <a href="#">Upcoming Events</a>
+        <a href="#">Explore Ecosystem</a>
+        <a href="#">Register Startup</a>
+        <a href="#">Get Unique ID</a>
+        <a href="#">Blog</a>
+      </div>
+    </div>
+
+    <!-- RIGHT VISUAL PANEL -->
+    <div class="hero-visual"></div>
+
+  </div>
+
+</section>
+
+<!-- ===============================
+     STATS BAR
+================================ -->
+<section class="stats-bar">
+
+  <div class="stats-grid">
+    <div>
+      <div class="stat-value">XXX+</div>
+      <div class="stat-label">Startups</div>
+    </div>
+    <div>
+      <div class="stat-value">XX Cr</div>
+      <div class="stat-label">Grants Disbursed</div>
+    </div>
+    <div>
+      <div class="stat-value">XX Cr</div>
+      <div class="stat-label">Fund Support</div>
+    </div>
+    <div>
+      <div class="stat-value">XX+</div>
+      <div class="stat-label">Incubators</div>
+    </div>
+    <div>
+      <div class="stat-value">XX L</div>
+      <div class="stat-label">Sq Ft Infrastructure</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===============================
+     FLOATING SOCIAL ICONS
+================================ -->
+<div class="social-float-right">
+  <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+  <a href="#" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+  <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+</div>
+
+```  
+
