@@ -3,6 +3,9 @@
 ================================================= */
 body {
   background-color: #fbfaf5;/* soft agri off-white */
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 :root {
   --green-main: #1f6f43;

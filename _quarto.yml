@@ -37,7 +37,7 @@ website:
   #   left: |
   #     Powered by:
   #     <img src="www/logo.webp" alt="Statoberry Logo" style="height:25px; padding: 5px 10px 5px 10px; margin-bottom: 5px;">
-  #   # center:
+  # #   # center:
   #   #   - icon: youtube
   #   #     href: https://www.youtube.com/@statoberry
   #   #   - icon: facebook
