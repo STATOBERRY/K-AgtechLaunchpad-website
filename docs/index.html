@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./assets/agtech.png" rel="icon" type="image/png">
+<link href="./www/logo.webp" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4bb155a4969bed2c2896c76cdf5a36aa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4d6950d00f20e0ed965a423af09f0b33.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e1a95413ce7875775f0026b5519a171c.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./www/logo.png" alt="" class="navbar-logo">
+    <img src="./www/logo.webp" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">K-Agtech Launchpad</span>
@@ -184,29 +184,67 @@ ul.task-list li input[type="checkbox"] {
 <section class="stats-bar">
 
   <div class="stats-grid">
-    <div>
-      <div class="stat-value">XXX+</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="10" data-suffix="+">0</div>
       <div class="stat-label">Startups</div>
     </div>
-    <div>
-      <div class="stat-value">XX Cr</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="5" data-suffix=" Cr">0</div>
       <div class="stat-label">Grants Disbursed</div>
     </div>
-    <div>
-      <div class="stat-value">XX Cr</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="15" data-suffix=" Cr">0</div>
       <div class="stat-label">Fund Support</div>
     </div>
-    <div>
-      <div class="stat-value">XX+</div>
-      <div class="stat-label">Incubators</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="10" data-suffix="+">0</div>
+      <div class="stat-label">Mentors</div>
     </div>
-    <div>
-      <div class="stat-value">XX L</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="5000" data-suffix="+">0</div>
       <div class="stat-label">Sq Ft Infrastructure</div>
     </div>
+
   </div>
 
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".stat-value");
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.dataset.target, 10);
+    const suffix = counter.dataset.suffix || "";
+    const duration = 1500; // total animation time in ms
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(progress * target);
+
+      counter.textContent = value.toLocaleString() + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target.toLocaleString() + suffix;
+      }
+    }
+
+    requestAnimationFrame(update);
+  });
+});
+</script>
+
+
+
 
 <!-- ===============================
      FLOATING SOCIAL ICONS
@@ -217,7 +255,63 @@ ul.task-list li input[type="checkbox"] {
   <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
   <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
 </div>
+<!-- Footer -->
+<div class="footer-wrapper">
+  <footer class="footer">
+    <div class="footer-container">
 
+      <!-- Column 1 -->
+      <div class="footer-column">
+        <h4 class="anchored">Logins</h4>
+        <ul>
+          <li><a href="">Admin Login</a></li>
+          <li><a href="registration.html">User Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-column">
+        <h4 class="anchored">Policies</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-column">
+        <h4 class="anchored">Contact</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+<div class="footer-bottom">
+  <!-- Left Logos -->
+  <div class="footer-logos left-logos">
+    <img src="www/logo.webp" alt="Logo 1">
+    <img src="www/kbc.png" alt="Logo 2">
+  </div>
+
+  <!-- Center Text -->
+  <div class="footer-text">
+    © 2026 K-Agtech Launchpad. All Rights Reserved.
+    <br>
+    <small style="font-size: 0.8rem; color: #aaa;">
+      Powered by <a href="https://www.statoberry.com" target="_blank" style="color: #aaa; text-decoration: none;">Statoberry LLP</a>
+    </small>
+  </div>
+
+  <!-- Right Logos -->
+  <div class="footer-logos right-logos">
+    <img src="www/20years.png" alt="Logo 3">
+    <img src="www/ksbb1.png" alt="Logo 4">
+  </div>
+</div>
+</footer>
+</div>
 
 
 
@@ -784,44 +878,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>© 2026 K-Agtech Launchpad supported by NABARD <img src="assets/agtech.png" alt="Statoberry Logo" style="height:25px; padding: 5px 10px 5px 10px; margin-bottom: 5px;"></p>
-</div>   
-    <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/@statoberry">
-      <i class="bi bi-youtube" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://facebook.com/statoberry">
-      <i class="bi bi-facebook" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/company/statoberry">
-      <i class="bi bi-linkedin" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://instagram.com/statoberry">
-      <i class="bi bi-instagram" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 

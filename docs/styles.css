@@ -122,7 +122,7 @@ body {
       rgba(31, 111, 67, 0.15),
       rgba(243, 198, 35, 0.15)
     ),
-    url("assets/entrygif.gif") center / cover no-repeat;
+    url("assets/entry1gif.gif") center / cover no-repeat;
   height: 320px;
   border-radius: 2rem;
 }
@@ -214,6 +214,265 @@ body {
 /* Hide floating icons on mobile */
 @media (max-width: 768px) {
   .social-float-right {
+    display: none;
+  }
+}
+
+
+/* =================================================
+ Footer
+================================================= */
+/* Make Quarto page footer fixed */
+.q-footer {
+    position: fixed !important;  /* Fix it to viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 20px;
+    display: flex !important;          /* Keep left/center/right layout */
+    justify-content: space-between !important;
+    background-color: #066b23 !important; /* Ensure footer color */
+    color: white !important;
+    flex-wrap: wrap;
+}
+
+/* Ensure links in footer stay white */
+.q-footer a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Add padding at bottom of page so content doesn't overlap footer */
+.q-body {
+    padding-bottom: 80px; /* Adjust if footer height changes */
+}
+
+/* ===============================
+   FOOTER – AGTECH COLOUR THEME
+================================ */
+
+/* Full-width wrapper */
+.footer-wrapper {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #1f3d2b;   /* deep agri green */
+}
+
+/* Footer main */
+.footer {
+  color: #eef4ef;        /* soft off-white */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Columns container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Individual column */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #c8a437;        /* muted institutional gold */
+}
+
+.footer-column ul li a {
+  color: #eef4ef;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #c8a437;
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  background: #183424;   /* darker green strip */
+  color: #e6ede8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Logos */
+.footer-logos img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: #f6faf7;   /* soft light background */
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-logos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(200, 164, 55, 0.45); /* gold glow */
+}
+
+/* Footer text */
+.footer-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+.footer-text a {
+  color: #cfd8d2;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  color: #ffffff;
+}
+
+/* =================================================
+   REMOVE GAP AFTER FOOTER
+================================================= */
+
+/* Remove default body spacing */
+body {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Ensure footer is last visible block */
+.footer-wrapper {
+  margin-bottom: 0 !important;
+}
+
+/* Prevent Quarto container padding from leaking */
+main {
+  padding-bottom: 0 !important;
+}
+
+
+/* =================================================
+   QUARTO NAVBAR – FINAL LOGIC (CLEAN & STABLE)
+================================================= */
+
+/* ---------- Navbar container ---------- */
+.navbar {
+  background-color: #f4f8f2 !important; /* soft agri off-white */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.45rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+/* ---------- Brand / Logo ---------- */
+.navbar-brand img {
+  height: 42px;
+}
+
+/* ---------- Base nav link ---------- */
+.navbar-nav .nav-link {
+  position: relative;
+  color: #2f3e34 !important;   /* default text */
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.35rem 0.25rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+/* ---------- Hover underline (ONLY on hover) ---------- */
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--green-main),
+    #c8a437
+  );
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+/* Show underline only on hover */
+.navbar-nav .nav-link:hover::before {
+  width: 100%;
+}
+
+/* ---------- Active / Selected page ---------- */
+.navbar-nav .nav-link.active {
+  color: var(--green-main) !important; /* solid green text */
+  font-weight: 600;
+}
+
+/* IMPORTANT: no underline for active */
+.navbar-nav .nav-link.active::before {
+  width: 0 !important;
+}
+
+/* ---------- Separator (|) ---------- */
+.navbar-nav .nav-link::after {
+  content: " |";
+  color: #cfd6cf;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+/* Remove separator from last LEFT menu item */
+.navbar-nav:not(.ms-auto) .nav-item:last-child .nav-link::after {
+  content: "";
+}
+
+/* Remove separator from RIGHT menu (Login etc.) */
+.navbar-nav.ms-auto .nav-link::after {
+  content: "";
+}
+
+/* ---------- Right-side (Login) ---------- */
+.navbar-nav.ms-auto .nav-link {
+  font-weight: 600;
+  color: #1f6f43 !important;
+}
+
+/* ---------- Focus & accessibility ---------- */
+.navbar-nav .nav-link:focus {
+  box-shadow: none;
+}
+
+/* ---------- Mobile behaviour ---------- */
+@media (max-width: 992px) {
+
+  /* No separators in mobile menu */
+  .navbar-nav .nav-link::after {
+    content: "";
+  }
+
+  /* No underline animation in mobile */
+  .navbar-nav .nav-link::before {
     display: none;
   }
 }

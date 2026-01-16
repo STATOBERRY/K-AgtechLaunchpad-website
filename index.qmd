@@ -54,29 +54,67 @@
 <section class="stats-bar">
 
   <div class="stats-grid">
-    <div>
-      <div class="stat-value">XXX+</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="10" data-suffix="+">0</div>
       <div class="stat-label">Startups</div>
     </div>
-    <div>
-      <div class="stat-value">XX Cr</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="5" data-suffix=" Cr">0</div>
       <div class="stat-label">Grants Disbursed</div>
     </div>
-    <div>
-      <div class="stat-value">XX Cr</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="15" data-suffix=" Cr">0</div>
       <div class="stat-label">Fund Support</div>
     </div>
-    <div>
-      <div class="stat-value">XX+</div>
-      <div class="stat-label">Incubators</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="10" data-suffix="+">0</div>
+      <div class="stat-label">Mentors</div>
     </div>
-    <div>
-      <div class="stat-value">XX L</div>
+
+    <div class="stat-item">
+      <div class="stat-value" data-target="5000" data-suffix="+">0</div>
       <div class="stat-label">Sq Ft Infrastructure</div>
     </div>
+
   </div>
 
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".stat-value");
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.dataset.target, 10);
+    const suffix = counter.dataset.suffix || "";
+    const duration = 1500; // total animation time in ms
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(progress * target);
+
+      counter.textContent = value.toLocaleString() + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target.toLocaleString() + suffix;
+      }
+    }
+
+    requestAnimationFrame(update);
+  });
+});
+</script>
+
+
+
 
 <!-- ===============================
      FLOATING SOCIAL ICONS
@@ -87,6 +125,64 @@
   <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
   <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
 </div>
+```
 
-```  
+```{=html}
+<!-- Footer -->
+<div class="footer-wrapper">
+  <footer class="footer">
+    <div class="footer-container">
 
+      <!-- Column 1 -->
+      <div class="footer-column">
+        <h4>Logins</h4>
+        <ul>
+          <li><a href="">Admin Login</a></li>
+          <li><a href="registration.html">User Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-column">
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+<div class="footer-bottom">
+  <!-- Left Logos -->
+  <div class="footer-logos left-logos">
+    <img src="www/logo.webp" alt="Logo 1">
+    <img src="www/kbc.png" alt="Logo 2">
+  </div>
+
+  <!-- Center Text -->
+  <div class="footer-text">
+    © 2026 K-Agtech Launchpad. All Rights Reserved.
+    <br>
+    <small style="font-size: 0.8rem; color: #aaa;">
+      Powered by <a href="https://www.statoberry.com" target="_blank" style="color: #aaa; text-decoration: none;">Statoberry LLP</a>
+    </small>
+  </div>
+
+  <!-- Right Logos -->
+  <div class="footer-logos right-logos">
+    <img src="www/20years.png" alt="Logo 3">
+    <img src="www/ksbb1.png" alt="Logo 4">
+  </div>
+</div>
+</footer>
+</div>
+```
