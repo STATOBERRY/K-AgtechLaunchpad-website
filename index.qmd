@@ -120,12 +120,242 @@ document.addEventListener("DOMContentLoaded", () => {
      FLOATING SOCIAL ICONS
 ================================ -->
 <div class="social-float-right">
-  <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+  <a href="https://www.facebook.com/people/K-AgTech-LaunchPad/61573844348183" title="Facebook"><i class="bi bi-facebook"></i></a>
   <a href="#" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-  <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-  <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  <a href="https://www.linkedin.com/company/k-agtechlaunchpad/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="#" title="Youtube"><i class="bi bi-youtube"></i></a>
 </div>
-```
+```  
+
+```{=html}  
+<!-- ===============================
+     ABOUT THE LAUNCHPAD
+================================ -->
+<!-- ===============================
+     ABOUT K-AGTECH LAUNCHPAD
+================================ -->
+
+<section id="about" class="about-section">
+
+  <div class="about-container">
+
+    <h2 class="about-title">About K-AgTech LaunchPad</h2>
+
+    <p class="about-text">
+      The K-AgTech LaunchPad is a flagship agri-innovation initiative supported under
+      NABARD’s Rural Business Incubation Centre (RBIC) programme. It represents the
+      largest NABARD-funded project hosted at Kerala Agricultural University (KAU),
+      bringing together academia, global research expertise, and industry engagement
+      to strengthen India’s agri-innovation ecosystem.
+    </p>
+
+    <p class="about-text">
+      Established through a strategic collaboration between Kerala Agricultural
+      University (KAU), Western Sydney University (WSU), and industry partners, the
+      LaunchPad is designed to address pressing agricultural challenges through
+      technology-driven solutions, applied research, and enterprise development.
+    </p>
+
+    <p class="about-text">
+      More than an incubation centre, the K-AgTech LaunchPad functions as a catalyst
+      for change—supporting farmers, agripreneurs, and rural communities by enabling
+      the adoption of advanced AgTech solutions and translating research outcomes
+      into real-world impact.
+    </p>
+
+    <ul class="about-list">
+      <li>End-to-end incubation support for start-ups, from ideation to market readiness</li>
+      <li>Value addition and product diversification to enhance farmers’ income</li>
+      <li>Entrepreneurial capacity building that connects research with industry needs</li>
+      <li>AI-enabled smart climate adaptation technologies for resilient agriculture</li>
+      <li>Promotion of women-led enterprises to foster inclusive and sustainable growth</li>
+    </ul>
+
+    <h3 class="about-subtitle">Expected Impact</h3>
+
+    <p class="about-text">
+      The LaunchPad aims to stimulate economic growth by nurturing start-ups and
+      Small and Medium Enterprises (SMEs), strengthening climate resilience through
+      smart agricultural practices, and enabling global knowledge exchange through
+      WSU-led collaborations.
+    </p>
+
+    <p class="about-text">
+      By establishing a supportive entrepreneurial ecosystem and a state-of-the-art
+      incubation facility, the programme seeks to accelerate AI-integrated precision
+      agriculture, promote scalable agripreneurship, and contribute meaningfully to
+      the transformation of Kerala’s agricultural landscape.
+    </p>
+
+  </div>
+
+</section>
+```  
+```{=html}  
+<!-- ===============================
+     GALLERY SECTION
+================================ -->
+
+<section id="gallery" class="gallery-section">
+
+  <div class="gallery-container">
+
+    <h2 class="gallery-title">Gallery</h2>
+    <p class="gallery-subtitle">
+      Moments from the K-AgTech LaunchPad journey
+    </p>
+
+    <!-- Tabs -->
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" data-tab="inaugural">
+        Inaugural Session
+      </button>
+      <button class="gallery-tab" data-tab="programmes">
+        Programmes & Activities
+      </button>
+    </div>
+
+    <!-- Inaugural Slider -->
+    <div class="gallery-panel active" id="inaugural">
+      <div class="gallery-slider">
+        <button class="slider-btn prev" data-type="inaugural">❮</button>
+        <img id="inaugural-img"
+             src="assets/gallery/inaugural1.webp"
+             alt="Inaugural session">
+        <button class="slider-btn next" data-type="inaugural">❯</button>
+      </div>
+    </div>
+
+    <!-- Programmes Slider -->
+    <div class="gallery-panel" id="programmes">
+      <div class="gallery-slider">
+        <button class="slider-btn prev" data-type="programmes">‹</button>
+        <img id="programmes-img"
+             src="assets/gallery/programmes/klp01.jpg"
+             alt="Programme activity">
+        <button class="slider-btn next" data-type="programmes">›</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===============================
+     GALLERY SCRIPT
+================================ -->
+
+<script>
+const inauguralImages = [
+  "assets/gallery/inaugural1.webp",
+  "assets/gallery/inaugural2.webp",
+  "assets/gallery/inaugural3.webp",
+  "assets/gallery/inaugural4.webp"
+];
+
+const programmeImages = [
+  "assets/gallery/programmes/klp01.jpg",
+  "assets/gallery/programmes/klp02.jpg"
+];
+
+let inauguralIndex = 0;
+let programmeIndex = 0;
+
+/* Slider navigation */
+document.querySelectorAll(".slider-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.type;
+    const next = btn.classList.contains("next");
+
+    if (type === "inaugural") {
+      inauguralIndex = next
+        ? (inauguralIndex + 1) % inauguralImages.length
+        : (inauguralIndex - 1 + inauguralImages.length) % inauguralImages.length;
+
+      document.getElementById("inaugural-img").src =
+        inauguralImages[inauguralIndex];
+    }
+
+    if (type === "programmes") {
+      programmeIndex = next
+        ? (programmeIndex + 1) % programmeImages.length
+        : (programmeIndex - 1 + programmeImages.length) % programmeImages.length;
+
+      document.getElementById("programmes-img").src =
+        programmeImages[programmeIndex];
+    }
+  });
+});
+
+/* Tab switching */
+document.querySelectorAll(".gallery-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".gallery-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".gallery-panel").forEach(p => p.classList.remove("active"));
+
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
+  });
+});
+</script> 
+
+<script>
+/* ===============================
+   SWIPE SUPPORT (MOBILE)
+================================ */
+
+function addSwipeSupport(imgElement, images, indexRef, updateFn) {
+  let startX = 0;
+
+  imgElement.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  imgElement.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      updateFn(diff > 0 ? "next" : "prev");
+    }
+  });
+}
+
+/* Inaugural swipe */
+addSwipeSupport(
+  document.getElementById("inaugural-img"),
+  inauguralImages,
+  () => inauguralIndex,
+  direction => {
+    inauguralIndex =
+      direction === "next"
+        ? (inauguralIndex + 1) % inauguralImages.length
+        : (inauguralIndex - 1 + inauguralImages.length) % inauguralImages.length;
+
+    document.getElementById("inaugural-img").src =
+      inauguralImages[inauguralIndex];
+  }
+);
+
+/* Programme swipe */
+addSwipeSupport(
+  document.getElementById("programmes-img"),
+  programmeImages,
+  () => programmeIndex,
+  direction => {
+    programmeIndex =
+      direction === "next"
+        ? (programmeIndex + 1) % programmeImages.length
+        : (programmeIndex - 1 + programmeImages.length) % programmeImages.length;
+
+    document.getElementById("programmes-img").src =
+      programmeImages[programmeIndex];
+  }
+);
+</script>
+
+
+```  
 
 ```{=html}
 <!-- Footer -->
@@ -185,4 +415,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </footer>
 </div>
-```
+```  
+
+

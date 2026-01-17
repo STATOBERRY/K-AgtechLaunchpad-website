@@ -26,30 +26,18 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "About"
-        href: about.qmd
+        href: index.qmd#about
+      - text: "Gallery"
+        href: index.qmd#gallery
 
     right:
       - icon: telephone
         href: contact.qmd
         text: "Contact us"
-  # 
-  # page-footer:
-  #   left: |
-  #     Powered by:
-  #     <img src="www/logo.webp" alt="Statoberry Logo" style="height:25px; padding: 5px 10px 5px 10px; margin-bottom: 5px;">
-  # #   # center:
-  #   #   - icon: youtube
-  #   #     href: https://www.youtube.com/@statoberry
-  #   #   - icon: facebook
-  #   #     href: https://facebook.com/statoberry
-  #   #   - icon: linkedin
-  #   #     href: https://linkedin.com/company/statoberry
-  #   #   - icon: instagram
-  #   #     href: https://instagram.com/statoberry
-  #   # background: "#f0ddef"
 
 format:
   html:
+    include-after-body: footer.html
     theme:
       light:
         - cosmo
